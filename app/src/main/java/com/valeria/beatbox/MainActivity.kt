@@ -25,11 +25,17 @@ class MainActivity : AppCompatActivity() {
             adapter = SoundAdapter(beatBox.sounds) //Подключение SoundAdapter и передача звуков адаптеру
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        beatBox.release()
+    }
+
     //объект SoundHolder, связанный с list_item_sound.xml
     private inner class SoundHolder(private val binding: ListItemSoundBinding):
             RecyclerView.ViewHolder(binding.root){
                 init {
-                    binding.viewModel = SoundViewModel()
+                    binding.viewModel = SoundViewModel(beatBox)
                 }
                 fun bind(sound: Sound){
                     binding.apply {
