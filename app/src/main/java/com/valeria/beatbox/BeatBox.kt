@@ -37,7 +37,7 @@ class BeatBox(private val assets: AssetManager) {
                 load(sound)
                 sounds.add(sound)
             } catch (ioe: IOException){
-                Log.e(TAG,"Cound not load sound $filename", ioe)
+                Log.e(TAG,"Could not load sound $filename", ioe)
             }
         }
         return sounds

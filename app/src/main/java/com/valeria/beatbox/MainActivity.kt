@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.valeria.beatbox.databinding.ActivityMainBinding
@@ -12,6 +13,7 @@ import com.valeria.beatbox.databinding.ListItemSoundBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var beatBox: BeatBox
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
